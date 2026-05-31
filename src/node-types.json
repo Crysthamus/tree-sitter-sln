@@ -1,0 +1,504 @@
+[
+  {
+    "type": "arch_identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "config_key",
+    "named": true,
+    "fields": {
+      "arch": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arch_identifier",
+            "named": true
+          }
+        ]
+      },
+      "mode": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "config_value",
+    "named": true,
+    "fields": {
+      "arch": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arch_identifier",
+            "named": true
+          }
+        ]
+      },
+      "mode": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "document",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "global_block",
+          "named": true
+        },
+        {
+          "type": "header",
+          "named": true
+        },
+        {
+          "type": "project_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "global_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "global_section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "global_section",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "key_value_pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "guid_key",
+    "named": true,
+    "fields": {
+      "arch": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arch_identifier",
+            "named": true
+          }
+        ]
+      },
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "guid",
+            "named": true
+          }
+        ]
+      },
+      "mode": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "prop": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "header",
+    "named": true,
+    "fields": {
+      "version": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "version",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "property",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "config_key",
+          "named": true
+        },
+        {
+          "type": "guid",
+          "named": true
+        },
+        {
+          "type": "guid_key",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key_value_pair",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "key",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "project_block",
+    "named": true,
+    "fields": {
+      "guid": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "guid",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "project_section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "project_section",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "section_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "key_value_pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "property",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "version",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "section_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "config_value",
+          "named": true
+        },
+        {
+          "type": "guid",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "# Visual Studio Version",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "Any CPU",
+    "named": false
+  },
+  {
+    "type": "EndGlobal",
+    "named": false
+  },
+  {
+    "type": "EndGlobalSection",
+    "named": false
+  },
+  {
+    "type": "EndProject",
+    "named": false
+  },
+  {
+    "type": "EndProjectSection",
+    "named": false
+  },
+  {
+    "type": "Global",
+    "named": false
+  },
+  {
+    "type": "GlobalSection",
+    "named": false
+  },
+  {
+    "type": "Microsoft Visual Studio Solution File, Format Version",
+    "named": false
+  },
+  {
+    "type": "Project",
+    "named": false
+  },
+  {
+    "type": "ProjectSection",
+    "named": false
+  },
+  {
+    "type": "guid",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "postProject",
+    "named": false
+  },
+  {
+    "type": "postSolution",
+    "named": false
+  },
+  {
+    "type": "preProject",
+    "named": false
+  },
+  {
+    "type": "preSolution",
+    "named": false
+  },
+  {
+    "type": "version",
+    "named": true
+  },
+  {
+    "type": "|",
+    "named": false
+  }
+]
