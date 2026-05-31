@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-bindings:
+    name: Build Bindings (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [node, rust, python, go, java, zig, swift, c]
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        if: matrix.language == 'node'
+        uses: actions/setup-node@v5
+      - name: Build Node Binding
+        if: matrix.language == 'node'
+        run: npm install
+
+      - name: Set up Rust
+        if: matrix.language == 'rust'
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build Rust Binding
+        if: matrix.language == 'rust'
+        run: cargo check
+
+      - name: Set up Python
+        if: matrix.language == 'python'
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Build Python Binding
+        if: matrix.language == 'python'
+        run: pip install .
+
+      - name: Set up Go
+        if: matrix.language == 'go'
+        uses: actions/setup-go@v6
+      - name: Build Go Binding
+        if: matrix.language == 'go'
+        run: go build ./bindings/go
+
+      - name: Set up Java
+        if: matrix.language == 'java'
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Build Java Binding
+        if: matrix.language == 'java'
+        run: mvn clean compile
+
+      - name: Set up Zig
+        if: matrix.language == 'zig'
+        uses: mlugg/setup-zig@v2
+      - name: Build Zig Binding
+        if: matrix.language == 'zig'
+        run: zig build
+
+      - name: Build Swift Binding
+        if: matrix.language == 'swift'
+        run: swift build
+
+      - name: Build C Library
+        if: matrix.language == 'c'
+        run: make
