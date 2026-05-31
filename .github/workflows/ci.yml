@@ -51,7 +51,7 @@ jobs:
         if: matrix.language == 'java'
         uses: actions/setup-java@v5
         with:
-          java-version: '21'
+          java-version: '23'
           distribution: 'temurin'
       - name: Build Java Binding
         if: matrix.language == 'java'
@@ -60,6 +60,8 @@ jobs:
       - name: Set up Zig
         if: matrix.language == 'zig'
         uses: mlugg/setup-zig@v2
+        with:
+          version: 0.14.1
       - name: Build Zig Binding
         if: matrix.language == 'zig'
         run: zig build
