@@ -14,10 +14,8 @@
 (config_key mode: (identifier) @function)
 (config_value mode: (identifier) @function)
 
-(arch_identifier) @variable
-
 (string) @string
-(identifier) @string
+(identifier) @property
 
 (guid) @constant
 (section_type) @constant
@@ -29,3 +27,4 @@
 "|" @punctuation.delimiter
 "." @punctuation.delimiter
 ["(" ")"] @punctuation.bracket
+

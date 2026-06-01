@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tree-sitter-sln"
 description = "A tree-sitter grammar for Visual Studio Solution (.sln) files"
-version = "0.1.1"
+version = "0.2.0"
 keywords = ["incremental", "parsing", "tree-sitter", "sln"]
 classifiers = [
   "Intended Audience :: Developers",

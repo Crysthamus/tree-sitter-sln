@@ -1,42 +1,40 @@
 {
-  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
-  "grammars": [
-    {
-      "name": "sln",
-      "camelcase": "Sln",
-      "title": "Visual Studio Solution",
-      "scope": "source.sln",
-      "file-types": [
-        "sln"
-      ],
-      "injection-regex": "^sln$",
-      "class-name": "TreeSitterSln"
-    }
-  ],
-  "metadata": {
-    "version": "0.1.1",
-    "license": "MIT",
-    "description": "A tree-sitter grammar for Visual Studio Solution (.sln) files",
-    "authors": [
-      {
-        "name": "Crysthamus",
-        "email": "crysthamus@gmail.com",
-        "url": "https://github.com/Crysthamus"
-      }
-    ],
-    "links": {
-      "repository": "https://github.com/Crysthamus/tree-sitter-sln",
-      "funding": ""
-    }
-  },
-  "bindings": {
-    "c": true,
-    "go": true,
-    "java": true,
-    "node": true,
-    "python": true,
-    "rust": true,
-    "swift": true,
-    "zig": true
-  }
+	"$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+	"grammars": [
+		{
+			"name": "sln",
+			"camelcase": "Sln",
+			"title": "Visual Studio Solution",
+			"scope": "source.sln",
+			"file-types": ["sln", "solution"],
+			"injection-regex": "^sln$",
+			"class-name": "TreeSitterSln"
+		}
+	],
+	"metadata": {
+		"version": "0.2.0",
+		"license": "MIT",
+		"description": "A tree-sitter grammar for Visual Studio Solution (.sln) files",
+		"authors": [
+			{
+				"name": "Crysthamus",
+				"email": "crysthamus@gmail.com",
+				"url": "https://github.com/Crysthamus"
+			}
+		],
+		"links": {
+			"repository": "https://github.com/Crysthamus/tree-sitter-sln",
+			"funding": "https://github.com/Crysthamus"
+		}
+	},
+	"bindings": {
+		"c": true,
+		"go": true,
+		"java": true,
+		"node": true,
+		"python": true,
+		"rust": true,
+		"swift": true,
+		"zig": true
+	}
 }
