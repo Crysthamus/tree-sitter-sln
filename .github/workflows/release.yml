@@ -1,0 +1,34 @@
+name: GitHub Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    name: Build WASM & Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+
+      - name: Install Tree-sitter CLI
+        run: npm install -g tree-sitter-cli
+
+      - name: Build WASM parser
+        run: tree-sitter build --wasm
+        
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v3
+        with:
+          files: |
+            tree-sitter-sln.wasm
+          generate_release_notes: true
+          draft: false
+          prerelease: false

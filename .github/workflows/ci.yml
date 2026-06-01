@@ -19,7 +19,7 @@ jobs:
 
       - name: Set up Node.js
         if: matrix.language == 'node'
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
       - name: Build Node Binding
         if: matrix.language == 'node'
         run: npm install

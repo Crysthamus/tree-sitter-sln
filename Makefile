@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-sln
 HOMEPAGE_URL := https://github.com/crysthamus/tree-sitter-sln
-VERSION := 0.1.0
+VERSION := 0.1.1
 
 # repository
 SRC_DIR := src

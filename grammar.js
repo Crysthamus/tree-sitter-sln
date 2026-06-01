@@ -17,7 +17,7 @@ export default grammar({
 			seq(
 				"Microsoft Visual Studio Solution File, Format Version",
 				field("version", $.version),
-				"# Visual Studio Version",
+				choice("# Visual Studio", "# Visual Studio Version"),
 				field("version", $.version),
 				repeat($.property),
 			),

@@ -406,6 +406,10 @@
     }
   },
   {
+    "type": "# Visual Studio",
+    "named": false
+  },
+  {
     "type": "# Visual Studio Version",
     "named": false
   },

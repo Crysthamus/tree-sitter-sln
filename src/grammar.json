@@ -46,8 +46,17 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "# Visual Studio Version"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "# Visual Studio"
+            },
+            {
+              "type": "STRING",
+              "value": "# Visual Studio Version"
+            }
+          ]
         },
         {
           "type": "FIELD",
